@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-// import Mainbar from './components/Mainbar';
-// import FormExpenses from './components/FormExpenses';
-// import TableExpenses from './components/TableExpenses';
+import Mainbar from './components/Mainbar';
+import FormExpenses from './components/FormExpenses';
+import TableExpenses from './components/TableExpenses';
 
 const App = () => {
   const [expenses, setExpenses] = useState([])
@@ -11,7 +11,7 @@ const App = () => {
     setExpenses([expense, ...expenses])
   }
   const filteredExpenses = expenses.filter(e =>
-    e.expense.toLowerCase()
+    e.expense.toLowerCase().includes(search.toLowerCase())
   );
   return (
     <div>

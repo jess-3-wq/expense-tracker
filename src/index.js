@@ -3,17 +3,11 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import TableExpenses from './components/TableExpenses';
-import FormExpenses from './components/FormExpenses';
-import Mainbar from './components/Mainbar';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <App />
-    <TableExpenses />
-    <FormExpenses />
-    <Mainbar />
    
   </React.StrictMode>
 );

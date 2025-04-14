@@ -5,7 +5,7 @@ const TableExpenses = ({ expenses = [] }) => {
     <table className="table-expense">
       <thead>
         <tr>
-          <th>Expense</th><th>Description</th><th>Category</th><th>Amount</th><th>Date</th>
+          <th>Expense</th><th>Description</th><th>Category</th><th>Amount</th><th>Date</th><th></th>
         </tr>
       </thead>
       <tbody>
@@ -16,6 +16,9 @@ const TableExpenses = ({ expenses = [] }) => {
             <td>{e.category}</td>
             <td>{e.amount}</td>
             <td>{e.date}</td>
+            <td>
+              <button className='delete-btn' onClick={(e) => (index)}>Delete</button>
+            </td>
           </tr>
         ))}
       </tbody>

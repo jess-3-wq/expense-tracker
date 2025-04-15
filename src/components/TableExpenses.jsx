@@ -1,6 +1,15 @@
 import React from 'react'
 
-const TableExpenses = ({ expenses = [] }) => {
+const TableExpenses = ({ expenses, setExpenses = [] }) => {
+
+  
+    const handleDelete = (indexToDelete) => {
+      const newExpenses = expenses.filter((_, index) => index !== indexToDelete)
+      setExpenses(newExpenses)
+    }
+  
+    return <TableExpenses expenses={expenses} handleDelete={handleDelete} />
+  
   return (
     <table className="table-expense">
       <thead>
@@ -17,7 +26,7 @@ const TableExpenses = ({ expenses = [] }) => {
             <td>{e.amount}</td>
             <td>{e.date}</td>
             <td>
-              <button className='delete-btn' onClick={(e) => (index)}>Delete</button>
+              <button className='delete-btn' onClick={(e) => handleDelete(index)}>Delete</button>
             </td>
           </tr>
         ))}
